@@ -10,6 +10,7 @@ import NotFound from './components/NotFound'
 import Signup from './components/Signup'
 import UpdateProfile from './components/UpdateProfile'
 import AuthContextProvider from './contexts/AuthContext'
+import Search from './components/Search'
 import './assets/scss/app.scss'
 
 const App = () => {
@@ -27,6 +28,10 @@ const App = () => {
 
 					  <Route path="/reset-password">
 							<ResetPassword />
+						</Route>
+						
+						<Route path="/search">
+							<Search />
 						</Route>
 
 						<Route path="/login">

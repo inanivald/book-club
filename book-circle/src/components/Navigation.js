@@ -24,6 +24,8 @@ const Navigation = () => {
 							{
 								currentUser ? (
 									<NavDropdown title={currentUser.displayName || currentUser.email} id="basic-nav-dropdown">
+										<NavLink to="/search" className="dropdown-item">Search books</NavLink>
+										<NavDropdown.Divider />
 										<NavLink to="/update-profile" className="dropdown-item">Update Profile</NavLink>
 										<NavDropdown.Divider />
 										<NavLink to="/login" className="dropdown-item" onClick={handleLogout}>Log Out</NavLink>
