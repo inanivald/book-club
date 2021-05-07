@@ -1,5 +1,12 @@
 import React, { useState } from 'react';
-import { InputGroup, Button, Form, FormGroup, FormControl, Spinner } from 'react-bootstrap';
+import {
+  InputGroup,
+  Button,
+  Form,
+  FormGroup,
+  FormControl,
+  Spinner
+} from 'react-bootstrap';
 import axios from 'axios';
 import BookCard from './BookCard.js';
 import '../assets/scss/app.scss'
@@ -44,7 +51,7 @@ function Search() {
   // Main Show Case
   const mainHeader = () => {
     return (
-      <div className='d-flex justify-content-center align-items-center flex-column'>
+      <div className='main-image d-flex justify-content-center align-items-center flex-column'>
         {/* Overlay */}
         <div className='filter'></div>
         <h1

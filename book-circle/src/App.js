@@ -11,6 +11,7 @@ import Signup from './components/Signup'
 import UpdateProfile from './components/UpdateProfile'
 import AuthContextProvider from './contexts/AuthContext'
 import Search from './components/Search'
+import Books from './components/Books'
 import './assets/scss/app.scss'
 
 const App = () => {
@@ -26,7 +27,11 @@ const App = () => {
 							<Home />
 						</AuthRoute>
 
-					  <Route path="/reset-password">
+						<Route path="/books">
+							<Books />
+						</Route>
+
+					  	<Route path="/reset-password">
 							<ResetPassword />
 						</Route>
 						

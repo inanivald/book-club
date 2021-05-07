@@ -17,6 +17,9 @@ const Navigation = () => {
 					<Link to="/" className="navbar-brand">
 						Book circle
 					</Link>
+					<Link to="/books" className="nav-link">
+						Booklist
+					</Link>
 
 					<Navbar.Toggle aria-controls="basic-navbar-nav" />
 					<Navbar.Collapse id="basic-navbar-nav">

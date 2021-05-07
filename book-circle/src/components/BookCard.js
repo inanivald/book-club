@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { Card, Button, Modal } from 'react-bootstrap';
+import React, { useState, useEffect } from 'react';
+import { Card, Button, Modal, Alert } from 'react-bootstrap';
+import useAddNewBook from '../hooks/useAddNewBook';
 
 
 const BookCard = ({
@@ -16,8 +17,39 @@ const BookCard = ({
   // States
   const [modal, setModal] = useState(false);
   const toggle = () => setModal(!modal);
+  const [uploadBook, setUploadBook] = useState(null);
+  const [message, setMessage] = useState(null);
+  const { error, isSuccess } = useAddNewBook(uploadBook);
 
+  useEffect(() => {
+		if (error) {
+			setMessage({
+				error: true,
+				text: error,
+			});
+		} else if (isSuccess) {
+			setMessage({
+				success: true,
+				text: 'The book was added to the list.',
+			});
+		} else {
+			setMessage(null);
+		}
+	}, [error, isSuccess]);
 
+  const book = {
+    title: title,
+    authors: authors,
+    pageCount: pageCount,
+    thumbnail: thumbnail,
+    infoLink: infoLink,
+};
+
+  const handleAddNewBook = () => {
+
+    setUploadBook(book);
+
+  }
 
   return (
     <>
@@ -30,6 +62,7 @@ const BookCard = ({
       <Card.Body>
         <Card.Title className='card-title'>{title}</Card.Title>
         <Button className='m-1' onClick={toggle}>More info</Button>
+        <Button className='m-1' onClick={handleAddNewBook}>Add book to reading list</Button>
       </Card.Body>
       <Modal show={modal} onHide={toggle}>
         <div className='modal-header d-flex justify-content-center'>
@@ -87,6 +120,10 @@ const BookCard = ({
       </Modal>
     </Card>
 
+    <div className="mt-3">
+      	{message && (<Alert variant={message.error ? 'warning' : 'success'}>{message.text}</Alert>)}
+
+    </div>
     </>
   );
 };
