@@ -12,6 +12,9 @@ import UpdateProfile from './components/UpdateProfile'
 import AuthContextProvider from './contexts/AuthContext'
 import Search from './components/Search'
 import Books from './components/Books'
+import ReadBooks from './components/ReadBooks'
+import UnreadBooks from './components/UnreadBooks'
+
 import './assets/scss/app.scss'
 
 const App = () => {
@@ -29,6 +32,14 @@ const App = () => {
 
 						<Route path="/books">
 							<Books />
+						</Route>
+						
+						<Route path="/read-books">
+							<ReadBooks />
+						</Route>
+						
+						<Route path="/unread-books">
+							<UnreadBooks />
 						</Route>
 
 					  	<Route path="/reset-password">

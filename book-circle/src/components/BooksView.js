@@ -8,8 +8,9 @@ import { db } from '../firebase';
 const BooksView = ({ books }) => {
 	const [deleteBook, setDeleteBook] = useState(null);
 	const [error, setError] = useState(false);
-    const { currentUser } = useAuth()
+	const { currentUser } = useAuth()
 	useDeleteBook(deleteBook);
+
 	const handleDeleteBook = (book) => {
 
 		// eslint-disable-next-line no-restricted-globals
@@ -38,20 +39,25 @@ const BooksView = ({ books }) => {
 
 	
 			} catch (err) {
-				setError(err.message);			}
+				setError(err.message);			
+			}
 		  }
 		
 	}
+
+
+	
 	
 	return (
 	
 	<>
 		<Row>
+	
 			{books.map(book => (
 				<Col sm={6} md={4} lg={3} key={book.id}>
 					<Card className="mb-3">
 						
-						<Card.Img variant="top" src={book.thumbnail} title={book.title} />
+						<Card.Img variant="top" src={book.thumbnail} title={book.title} className="img-fluid"/>
 						
 						<Card.Body>
 							<Card.Title className="mb-0">
@@ -90,7 +96,9 @@ const BooksView = ({ books }) => {
 						</Card.Body>
 					</Card>
 				</Col>
+				
 			))}
+			
 		</Row>
 	</>
 	

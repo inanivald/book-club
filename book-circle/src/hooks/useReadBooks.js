@@ -2,13 +2,13 @@ import { useEffect, useState } from 'react'
 import { db } from '../firebase'
 import { useAuth } from '../contexts/AuthContext'
 
-const useBooks = () => {
+const useAlbums = () => {
 	const [books, setBooks] = useState([])
 	const { currentUser } = useAuth()
 	const [loading, setLoading] = useState(true)
 
 	useEffect(() => {
-		
+		// Snapshot listener for all of the user's albums in firebase
 		const unsubscribe = db.collection('books')
 			.onSnapshot(snapshot => {
 				setLoading(true)
@@ -31,4 +31,4 @@ const useBooks = () => {
 	return { books, loading }
 }
 
-export default useBooks
+export default useAlbums

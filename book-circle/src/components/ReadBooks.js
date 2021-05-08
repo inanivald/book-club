@@ -3,17 +3,17 @@ import { Button } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 import { ClipLoader } from 'react-spinners'
 import useBooks from '../hooks/useBooks'
-import BooksView from './BooksView'
+import ReadBooksView from './ReadBooksView'
 import { Link } from 'react-router-dom'
 
-const Books = () => {
+const ReadBooks = () => {
 	const navigate = useNavigate();
-	const { books, loading } = useBooks()
+    const { books, loading } = useBooks()
 
 	const handleClick = () => {
 		navigate(`/search`)
 	}
-
+	
 	return (
 		<div className="">
 			
@@ -22,18 +22,18 @@ const Books = () => {
                 Search
             </Button>
 
-			<h2 className="mb-3">All Books</h2>
+			<h2 className="mb-3">All Read Books</h2>
 
 			{
 				loading
 					? (<ClipLoader color={"#888"} size={20} />)
-					: (<BooksView books={books} />)
+					: (<ReadBooksView books={books} />)
 			}
-            <Link to="/read-books">See all read books </Link>|<Link to="/unread-books"> See all unread books</Link>
+            <Link to="/books">See all books</Link>
 
 			
 		</div>
 	)
 }
 
-export default Books
+export default ReadBooks

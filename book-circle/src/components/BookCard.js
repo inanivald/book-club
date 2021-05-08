@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Card, Button, Modal, Alert } from 'react-bootstrap';
 import useAddNewBook from '../hooks/useAddNewBook';
 
-
 const BookCard = ({
   thumbnail,
   title,
