@@ -54,13 +54,13 @@ const BooksView = ({ books }) => {
 		<Row>
 	
 			{books.map(book => (
-				<Col sm={6} md={4} lg={3} key={book.id}>
-					<Card className="mb-3">
+				<Col md={6} lg={3} key={book.id}>
+					<Card className="mb-3 h-100">
 						
 						<Card.Img variant="top" src={book.thumbnail} title={book.title} className="img-fluid"/>
 						
 						<Card.Body>
-							<Card.Title className="mb-0">
+							<Card.Title><span className="strong">Title: </span>
 							<a href={book.infoLink}
               					className="btn-link"
 								color="default"
@@ -70,35 +70,41 @@ const BooksView = ({ books }) => {
 							</a>
 								
 							</Card.Title>
+							<div>
 								{
 									currentUser.uid === book.owner && (
-										<Button variant="danger" size="sm mt-3 mr-3" onClick={() => {
+										<>
+										<button className="mb-1 btn btn-outline-danger btn-sm" onClick={() => {
 											handleDeleteBook(book)
 										}}>
 											Delete
-										</Button>
+										</button>
+										</>
 									)
 								}
-							<Button variant="secondary" size="sm mt-3" 
-							onClick={() => {handleUpdateBook(book)}}>
+							
 							{
 								book.read
-								? ("Read")
-								: ("Unread")
+								? <button className="mb-1 ml-1 btn btn-outline-success btn-sm" size="sm mt-3" 
+								onClick={() => {handleUpdateBook(book)}}>Read</button>
+								: <button className="mb-1 ml-1 btn btn-outline-danger btn-sm" size="sm mt-3" 
+								onClick={() => {handleUpdateBook(book)}}>Unread</button>
 							}
-							</Button>
+							
 							{
                             error && (
                                 <Alert variant="danger">{error}</Alert>
                             )
                         }
-							
+						</div>
+						<div>
+							Book was added by: {book.addedBy}
+						</div>
 						</Card.Body>
 					</Card>
 				</Col>
 				
 			))}
-			
 		</Row>
 	</>
 	

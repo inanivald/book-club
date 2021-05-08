@@ -59,10 +59,9 @@ const BookCard = ({
       <Card.Img variant="top" src={thumbnail} alt={title} className="img-fluid"/>
       </div>
       <Card.Body>
-        <Card.Title>Title: {title}</Card.Title>
-        <Card.Title>Author: {authors}</Card.Title>
-        <button className="mb-1 btn btn-outline-success btn-sm" onClick={toggle}>More info</button>
-        <button className="btn btn-outline-danger btn-sm" onClick={handleAddNewBook}><FontAwesomeIcon icon={faHeart} size="xs"/></button>
+        <Card.Title>{title}</Card.Title>
+        <Button className='m-1' onClick={toggle}>More info</Button>
+        <Button className="btn btn-outline-danger btn-sm" onClick={handleAddNewBook}><FontAwesomeIcon icon={faHeart} size="xs"/></Button>
       </Card.Body>
       <Modal show={modal} onHide={toggle}>
         <div className='modal-header d-flex justify-content-center'>
@@ -118,15 +117,12 @@ const BookCard = ({
           </div>
         </div>
       </Modal>
-      <div className="">
+    </Card>
+
+    <div className="mt-3">
       	{message && (<Alert variant={message.error ? 'warning' : 'success'}>{message.text}</Alert>)}
 
     </div>
-    </Card>
-
-    
-
-   
     </>
   );
 };

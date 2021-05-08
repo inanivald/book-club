@@ -5,13 +5,17 @@ import {
   Form,
   FormGroup,
   FormControl,
-  Spinner
+  Spinner,
+  Col,
+  Row,
 } from 'react-bootstrap';
 import axios from 'axios';
 import BookCard from './BookCard.js';
 import '../assets/scss/app.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import PhotoPlaceholder from '../assets/images/photo-placeholder.png'
+
 
 function Search() {
   // States
@@ -51,14 +55,14 @@ function Search() {
   // Main Show Case
   const mainHeader = () => {
     return (
-      <div className='main-image d-flex justify-content-center align-items-center flex-column'>
+      <div className='main-image p-5 d-flex justify-content-center align-items-center flex-column mb-3'>
         {/* Overlay */}
         <div className='filter'></div>
         <h1
-          className='display-2 text-center text-white mb-3'
+          className='display-3'
           style={{ zIndex: 2 }}
         >
-          Google Books
+          Book Search
         </h1>
         <div style={{ width: '60%', zIndex: 2 }}>
           <InputGroup size='lg' className='mb-3'>
@@ -69,7 +73,7 @@ function Search() {
             />
             <InputGroup.Append>
               <Button color='secondary' onClick={handleSubmit}>
-			  <FontAwesomeIcon icon={faSearch} size="xs"/>
+			          <FontAwesomeIcon icon={faSearch} size="xs"/>
               </Button>
             </InputGroup.Append>
           </InputGroup>
@@ -108,14 +112,18 @@ function Search() {
         </div>
       );
     } else {
-      const items = cards.map((item, i) => {
+      const items = cards.map((item) => {
         let thumbnail = '';
         if (item.volumeInfo.imageLinks) {
           thumbnail = item.volumeInfo.imageLinks.thumbnail;
+        } else {
+          thumbnail = PhotoPlaceholder;
+
         }
 
         return (
-          <div className='col-lg-4 mb-3' key={item.id}>
+
+          <Col className="search-result mb-3" md={6} lg={3} key={item.id}>
             <BookCard
               thumbnail={thumbnail}
               title={item.volumeInfo.title}
@@ -127,18 +135,18 @@ function Search() {
               previewLink={item.volumeInfo.previewLink}
               infoLink={item.volumeInfo.infoLink}
             />
-          </div>
+          </Col>
         );
       });
       return (
-        <div className='container my-5'>
-          <div className='row'>{items}</div>
+        <div className='container'>
+          <Row>{items}</Row>
         </div>
       );
     }
   };
   return (
-    <div className='w-100 h-100'>
+    <div>
       {mainHeader()}
       {handleCards()}
     </div>

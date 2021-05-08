@@ -18,11 +18,12 @@ const useAddNewBook = (book) => {
 
 			const newBook = {
 				title: book.title,
-				authors: book.authors,
 				owner: currentUser.uid,
 				thumbnail: book.thumbnail,
 				infoLink: book.infoLink,
 				read: false,	
+				addedBy: currentUser.displayName,
+				
 			};
 
 		db.collection('books').add(newBook)

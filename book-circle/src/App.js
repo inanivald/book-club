@@ -23,7 +23,7 @@ const App = () => {
 			<AuthContextProvider>
 				<Navigation />
 
-				<Container className="py-3">
+			
 					<Routes>
 
 						<AuthRoute path="/">
@@ -65,7 +65,7 @@ const App = () => {
 						<Route path="*" element={<NotFound />} />
 
 					</Routes>
-				</Container>
+			
 			</AuthContextProvider>
 		</Router>
 	)
