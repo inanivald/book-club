@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Card, Button, Modal, Alert } from 'react-bootstrap';
+import { Card, Modal, Alert } from 'react-bootstrap';
 import useAddNewBook from '../hooks/useAddNewBook';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHeart } from '@fortawesome/free-solid-svg-icons'
+import { faHeart, faTimes } from '@fortawesome/free-solid-svg-icons'
 
 const BookCard = ({
   thumbnail,
@@ -39,10 +39,10 @@ const BookCard = ({
 	}, [error, isSuccess]);
 
   const book = {
-    title: title,
-
-    thumbnail: thumbnail,
-    infoLink: infoLink,
+    title,
+    authors, 
+    thumbnail,
+    infoLink,
 };
 
   const handleAddNewBook = () => {
@@ -59,8 +59,8 @@ const BookCard = ({
       <Card.Img variant="top" src={thumbnail} alt={title} className="img-fluid"/>
       </div>
       <Card.Body>
-        <Card.Title>Title: {title}</Card.Title>
-        <Card.Title>Author: {authors}</Card.Title>
+        <Card.Title><p><span className="strong">Title: </span>{title}</p>
+        <p><span className="strong">Author: </span>{authors}</p></Card.Title>
         <button className="mb-1 btn btn-outline-success btn-sm" onClick={toggle}>More info</button>
         <button className="btn btn-outline-danger btn-sm" onClick={handleAddNewBook}><FontAwesomeIcon icon={faHeart} size="xs"/></button>
       </Card.Body>
@@ -75,7 +75,7 @@ const BookCard = ({
             type='button'
             onClick={toggle}
           >
-            <span aria-hidden={true}>X</span>
+            <span aria-hidden={true}><FontAwesomeIcon icon={faTimes} size="xs"/></span>
           </button>
         </div>
         <div className='modal-body'>

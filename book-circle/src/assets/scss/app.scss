@@ -22,25 +22,15 @@ body {
   }
   
 .main-image {
-	background: url(../images/olga-tutunaru-plbb7pkEjkQ-unsplash.jpg);
+	background-image: linear-gradient( rgba(255, 255, 255, 0.403), rgba(255, 255, 255, 0.396) ), url(../images/olga-tutunaru-plbb7pkEjkQ-unsplash.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
 	max-width: 100%;
 	position: relative;
+	height: 60vh;
 }
   
-.filter:after {
-	background-color: rgba(255, 255, 255, 0.4);
-	content: '';
-	display: block;
-	height: 100%;
-	left: 0;
-	top: 0;
-	position: absolute;
-	width: 100%;
-	z-index: 1;
-}
 
   a, 
   a:link, 
@@ -50,7 +40,12 @@ body {
   }
   a:hover{
 	text-decoration: underline;
-
+  }
+  .card-title a {
+	color: #3B454E;
+  }
+  .card-title h3 {
+	font-size: 1rem;
   }
   
   ol, ul {
@@ -83,7 +78,7 @@ body {
 	text-transform: uppercase;
   }
   h3 {
-	font-size: 1.125rem;
+	font-size: 1rem;
 	font-weight: 700;
 	margin-bottom: .25rem;
 	text-transform: uppercase;  
@@ -163,7 +158,9 @@ body {
 	background-position: center;
 	max-width: 100%;
 	position: relative;
+	height: 60vh;
   }
+
   
   .card {
 	border-radius: 0;
@@ -211,6 +208,12 @@ col {
 	flex-direction: column;
 }
 
+span.divider	{
+	height: 100%;
+	width: 1px;
+	background-color: #3B454E;
+	display: block;
+}
 
 @media screen and (min-width: 768px) {
 
@@ -232,3 +235,42 @@ col {
         padding: 0.875rem 2.5rem;
     }
 }
+
+/*	______	Spacing	utilites	X	_______	*/
+.padding-x-row	{	
+	padding-left: 15px;	
+	padding-right: 15px;
+	transition: .5s;
+	}
+	
+	@media	(min-width: 768px)	{	
+	.padding-x-row{	
+	padding-left: 2rem;	
+	padding-right: 2rem;
+	}
+	}
+	@media	(min-width: 1200px)	{	
+	.padding-x-row	{
+	padding-left: 8vw;	
+	padding-right: 8vw;
+	}	
+	}
+	/*	_______	Spacing	utilites	y	________	*/
+	.padding-y-row	{	
+	padding-top: 2rem;	
+	padding-bottom: 2rem;
+	transition: .5s;
+	}
+	
+	@media	(min-width: 960px)	{	
+	.padding-y-row{	
+	padding-top: 2.5rem;	
+	padding-bottom: 2.5rem;	
+	}
+	}
+	@media	(min-width: 1200px)	{	
+	.padding-y-row{	
+	padding-top: 5rem;	
+	padding-bottom: 5rem;	
+	}
+	}

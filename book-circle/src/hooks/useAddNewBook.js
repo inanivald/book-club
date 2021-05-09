@@ -15,15 +15,16 @@ const useAddNewBook = (book) => {
 			setIsSuccess(false);
 			return;
 		}
+		
 
 			const newBook = {
 				title: book.title,
 				owner: currentUser.uid,
 				thumbnail: book.thumbnail,
+				authors: book.authors,
 				infoLink: book.infoLink,
 				read: false,	
 				addedBy: currentUser.displayName,
-				
 			};
 
 		db.collection('books').add(newBook)

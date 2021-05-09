@@ -1,5 +1,6 @@
 import React from 'react'
 import { Row, Col, Card } from 'react-bootstrap'
+import Header from './Header'
 
 
 const UnreadBooksView = ({ books }) => {
@@ -10,9 +11,12 @@ const unreadBooks = books.filter(book => book.read === false)
 	return (
 	
 	<>
+	<Header className="p-5"/>
+		<div className="padding-x-row padding-y-row">
+		<h2 className="mb-3">All Unread Books</h2>
 		<Row>
 			{unreadBooks.map(book => (
-				<Col sm={6} md={4} lg={3} key={book.id}>
+				<Col md={6} lg={3} key={book.id}>
 					<Card className="mb-3">
 						
 						<Card.Img variant="top" src={book.thumbnail} title={book.title} className="img-fluid"/>
@@ -35,7 +39,8 @@ const unreadBooks = books.filter(book => book.read === false)
 				
 			))}
 			
-		</Row>
+			</Row>
+		</div>
 	</>
 	
 	)

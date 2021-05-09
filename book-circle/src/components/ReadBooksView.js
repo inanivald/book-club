@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Row, Col, Card } from 'react-bootstrap'
+import { Row, Col, Card } from 'react-bootstrap'
 import Header from './Header'
 
 const ReadBooksView = ({ books }) => {
@@ -10,7 +10,7 @@ const ReadBooksView = ({ books }) => {
 	
 	<>
 	<Header className="p-5"/>
-		<Container className="py-3">
+		<div className="padding-x-row padding-y-row">
 		<h2 className="mb-3">All Read Books</h2>
 			<Row>
 				{readBooks.map(book => (
@@ -38,7 +38,7 @@ const ReadBooksView = ({ books }) => {
 				))}
 				
 			</Row>
-		</Container>			
+		</div>			
 	</>
 	
 	)

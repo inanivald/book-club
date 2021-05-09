@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Row, Col, Card, Button, Alert } from 'react-bootstrap'
+import { Row, Col, Card, Alert } from 'react-bootstrap'
 import { useAuth } from '../contexts/AuthContext'
 import useDeleteBook from '../hooks/useDeleteBook'
 import { db } from '../firebase';
@@ -60,16 +60,18 @@ const BooksView = ({ books }) => {
 						<Card.Img variant="top" src={book.thumbnail} title={book.title} className="img-fluid"/>
 						
 						<Card.Body>
-							<Card.Title><span className="strong">Title: </span>
+							<Card.Title><p>Title:&nbsp; 
 							<a href={book.infoLink}
               					className="btn-link"
 								color="default"
 								type="button"
 								target="_blank'rel='noopener noreferrer">
-								{book.title}
+								 {book.title}
 							</a>
-								
-							</Card.Title>
+							</p>
+							<p>Author:&nbsp; 
+							 {book.authors}
+							</p></Card.Title>
 							<div>
 								{
 									currentUser.uid === book.owner && (
@@ -97,10 +99,11 @@ const BooksView = ({ books }) => {
                             )
                         }
 						</div>
-						<div>
-							Book was added by: {book.addedBy}
-						</div>
+							
 						</Card.Body>
+						<Card.Footer>
+								<small className="text-muted">This book was added by {book.addedBy}</small>
+							</Card.Footer>
 					</Card>
 				</Col>
 				
