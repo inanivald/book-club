@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { InputGroup, Button, FormControl, Spinner, Col, Row, } from 'react-bootstrap';
+import { InputGroup, Button, FormControl, Spinner, Col, Row, Alert} from 'react-bootstrap';
 import axios from 'axios';
 import BookCard from './BookCard.js';
 import '../assets/scss/app.scss'
@@ -62,45 +62,52 @@ function Search() {
           <Spinner style={{ width: '3rem', height: '3rem' }} />
         </div>
       );
-    } else {
-      const items = cards.map((item) => {
-		let thumbnail = '';
-        if (item.volumeInfo.imageLinks) {
-          thumbnail = item.volumeInfo.imageLinks.thumbnail;
-        } else {
-          thumbnail = Placeholder;
-		}
-		let authors = '';
-        if (item.volumeInfo.authors) {
-          authors = item.volumeInfo.authors;
-        } else {
-          authors = 'No info added';
-		}
-		
+	} else if (cards) {
+		const items = cards.map((item) => {
+			let thumbnail = '';
+			if (item.volumeInfo.imageLinks) {
+				thumbnail = item.volumeInfo.imageLinks.thumbnail;
+			} else {
+				thumbnail = Placeholder;
+			}
+			let authors = '';
+			if (item.volumeInfo.authors) {
+				authors = item.volumeInfo.authors;
+			} else {
+				authors = 'No info added';
+			}
+			
+			return (
+			<Col className="search-result mb-3" md={6} lg={3} key={item.id}>
+				<BookCard
+					thumbnail={thumbnail}
+					title={item.volumeInfo.title}
+					pageCount={item.volumeInfo.pageCount}
+					language={item.volumeInfo.language}
+					authors={authors}
+					publisher={item.volumeInfo.publisher}
+					description={item.volumeInfo.description}
+					previewLink={item.volumeInfo.previewLink}
+					infoLink={item.volumeInfo.infoLink}
+				/>
+			</Col>
+			);
+		});
+	return (
+		<div className="padding-x-row padding-y-row">
+			<Row>{items}</Row>
+		</div>
+	);
+	} else {
+		return (
+			<div className='text-center'>
+				<Alert variant="danger">Your search returned 0 results.</Alert>
+			</div>
+		);
 
-    return (
-        <Col className="search-result mb-3" md={6} lg={3} key={item.id}>
-            <BookCard
-				thumbnail={thumbnail}
-				title={item.volumeInfo.title}
-				pageCount={item.volumeInfo.pageCount}
-				language={item.volumeInfo.language}
-				authors={authors}
-				publisher={item.volumeInfo.publisher}
-				description={item.volumeInfo.description}
-				previewLink={item.volumeInfo.previewLink}
-				infoLink={item.volumeInfo.infoLink}
-            />
-        </Col>
-        );
-    });
-    return (
-        <div className="padding-x-row padding-y-row">
-          	<Row>{items}</Row>
-        </div>
-    );
-}
-	};
+	}
+};
+// handleCards end
   	return (
     	<div>
       		{mainHeader()}
