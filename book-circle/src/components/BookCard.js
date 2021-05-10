@@ -61,9 +61,9 @@ const BookCard = ({
 			<Card.Body className="books">
 				<Card.Title><p><span className="strong">Title: </span>{title}</p>
 				<p><span className="strong">Author: </span>{authors}</p></Card.Title>
-				<div className="d-flex flex-row">
-					<button className="btn btn-outline-success btn-sm mr-1" onClick={toggle}>More info</button>
-					<button className="btn btn-outline-danger btn-sm" onClick={handleAddNewBook}><FontAwesomeIcon icon={faHeart} size="xs"/></button>
+				<div className="search-results-buttons d-flex flex-row">
+					<button className="btn theme-btn btn-green mr-1" onClick={toggle}>More info</button>
+					<span className="heart-border"><button className="btn theme-btn btn-red heart" onClick={handleAddNewBook}><FontAwesomeIcon icon={faHeart} size="m"/></button></span>
 				</div>
 			</Card.Body>
 			<Modal show={modal} onHide={toggle}>

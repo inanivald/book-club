@@ -2,6 +2,8 @@ import React from 'react'
 import { useAuth } from '../contexts/AuthContext'
 import Header from './Header'
 import { Link } from 'react-router-dom'
+import MyBooks from './MyBooks'
+
 
 
 const Home = () => {
@@ -13,13 +15,14 @@ const Home = () => {
 			<Header className="p-5"/>
 				<div className="padding-x-row padding-y-row">
 				<h1>Welcome {currentUser.displayName || currentUser.email}!</h1>
-					<p>What do you want to do?</p>
-					<div className="mt-3">
-						<Link to="/books">See all books </Link>
+					<h2>What do you want to do?</h2>
+					<div className="mr-3 mb-3 my-books">
+						<Link to="/books" className="btn theme-btn mr-3 my-books">See all books </Link>
+					
+					
+						<Link to="/update-profile" className="btn theme-btn mr-3 my-books">Update Profile</Link>
 					</div>
-					<div className="mt-3">
-					<Link to="/update-profile">Update Profile</Link>
-					</div>
+					<MyBooks  />
 			</div>
 		</div>
 		

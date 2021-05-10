@@ -76,7 +76,7 @@ const BooksView = ({ books }) => {
 								{
 									currentUser.uid === book.owner && (
 										<>
-										<button className="mb-1 btn btn-outline-danger btn-sm" onClick={() => {
+										<button className="mb-1 btn theme-btn btn-sm btn-red" onClick={() => {
 											handleDeleteBook(book)
 										}}>
 											Delete
@@ -87,9 +87,9 @@ const BooksView = ({ books }) => {
 							
 							{
 								book.read
-								? <button className="mb-1 ml-1 btn btn-outline-success btn-sm" size="sm mt-3" 
+								? <button href="" className="mb-1 ml-1 btn theme-btn btn-green" size="sm mt-3" 
 								onClick={() => {handleUpdateBook(book)}}>Read</button>
-								: <button className="mb-1 ml-1 btn btn-outline-danger btn-sm" size="sm mt-3" 
+								: <button href="" className="mb-1 ml-1 btn theme-btn btn-sm btn-red" size="sm mt-3" 
 								onClick={() => {handleUpdateBook(book)}}>Unread</button>
 							}
 							

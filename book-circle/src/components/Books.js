@@ -21,8 +21,8 @@ const Books = () => {
 							? (<ClipLoader color={"#888"} size={20} />)
 							: (<BooksView books={books} />)
 					}
-					<div className="mt-3">
-						<Link to="/read-books">See all read books </Link>|<Link to="/unread-books"> See all unread books</Link>
+					<div className="mt-3 d-flex flex-row">
+						<Link to="/read-books" className="btn theme-btn mr-3">Read books </Link><Link to="/unread-books" className="btn theme-btn">Unread books</Link>
 					</div>
 			</div>
 		</div>

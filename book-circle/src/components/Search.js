@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { InputGroup, Button, FormControl, Spinner, Col, Row, Alert} from 'react-bootstrap';
+import { InputGroup, FormControl, Spinner, Col, Row, Alert} from 'react-bootstrap';
 import axios from 'axios';
 import BookCard from './BookCard.js';
 import '../assets/scss/app.scss'
@@ -45,9 +45,9 @@ function Search() {
               onChange={e => setResult(e.target.value)}
             />
             <InputGroup.Append>
-              <Button color='secondary' onClick={handleSubmit}>
+              <button className="btn theme-btn" onClick={handleSubmit}>
 			    <FontAwesomeIcon icon={faSearch} size="xs"/>
-              </Button>
+              </button>
             </InputGroup.Append>
           </InputGroup>
         </div>

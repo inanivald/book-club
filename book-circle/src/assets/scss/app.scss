@@ -35,6 +35,9 @@ a:hover{
 
 ol, ul {
 padding-left: 1.25rem;
+list-style-type: none;
+padding: 0;
+margin: 0;
 }
 
 /*–––––––––––––––––––––––––––––––––––––––––––––––––
@@ -60,7 +63,7 @@ h2 {
 	font-size: 1.25rem;
 	font-weight: 700;
 	margin-bottom: .25rem;
-	text-transform: uppercase;
+	
 }
 h3 {
 	font-size: 1rem;
@@ -76,7 +79,7 @@ h4 {
 h5 {
 	font-size: 1rem;
 	margin-bottom: .25rem;
-text-transform: uppercase;	
+	text-transform: uppercase;	
 }
 h6 {
 	font-size: .875rem;
@@ -143,7 +146,7 @@ h1 {
 }
 
 .main-image {
-	background-image: linear-gradient( rgba(255, 255, 255, 0.403), rgba(255, 255, 255, 0.396) ), url(../images/olga-tutunaru-plbb7pkEjkQ-unsplash.jpg);
+	background-image: linear-gradient( rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.7) ), url(../images/olga-tutunaru-plbb7pkEjkQ-unsplash.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -153,7 +156,7 @@ h1 {
 }
 
 .header {
-	background-image: linear-gradient( rgba(255, 255, 255, 0.403), rgba(255, 255, 255, 0.396) ), url(../images/olga-tutunaru-plbb7pkEjkQ-unsplash.jpg);
+	background-image: linear-gradient( rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.7) ), url(../images/olga-tutunaru-plbb7pkEjkQ-unsplash.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -201,6 +204,132 @@ col {
 	display: flex;
 	justify-content: space-between;
 	flex-direction: column;
+}
+
+span.divider	{
+	height: 1px;
+	width: 50%;
+	background-color: #3B454E;
+	display: block;
+}
+
+.heart {
+	color: red;
+}
+
+.heart-border {
+
+	border: 1px solid red;
+	padding: 0.5rem;
+	border-radius: 50%;
+	margin-bottom: 0.5rem;
+
+}
+
+.btn.btn-outline-success.mt-3.my-books a{
+	color: green;
+}
+.btn.btn-outline-success.mt-3.my-books:hover a{
+	color: #fff;
+}
+
+a.theme-btn, button.theme-btn {
+    color: #3B454E;
+    border: 2px solid #3B454E;
+    text-transform: uppercase;
+    border-radius: 2rem;
+    font-size: 1rem;
+    padding: 0.5rem 2rem;
+    background-color: transparent;
+    transition: all ease-in-out 0.2s;
+    font-weight: 500;
+}
+
+a.theme-btn:hover, button.theme-btn:hover{
+    opacity: 0.6;
+}
+
+span.heart-border {
+	border: 2px solid red;
+	border-radius: 50%;
+	padding: 0.5rem;
+	max-height: 2.5rem;
+
+}
+a.btn-red.heart, button.btn-red.heart, a.btn-red.heart:hover, button.btn-red.heart:hover{
+	border: 0;
+	padding: 0.1875rem 0.375rem 0.375rem 0.375rem;
+}
+.alert {
+	border-radius: 0;
+	margin-bottom: 0;
+}
+
+	:focus {
+		outline: 0 !important;
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important;
+	  }
+
+a.btn-red, button.btn-red {
+	color: red;
+	border: 2px solid red;
+	font-size: 0.75rem;
+    padding: 0.5rem 1rem;
+}
+a.btn-red:hover,
+button.btn-red:hover {
+    color: red;
+    border: 2px solid red;
+}
+a.btn-green, button.btn-green {
+	color: green;
+	border: 2px solid green;
+	font-size: 0.75rem;
+	padding: 0.5rem 1rem;
+	max-height: 2.5rem;
+}
+a.btn-green:hover,
+button.btn-green:hover {
+    color: green;
+	border: 2px solid green;
+	
+}
+
+.input-group-lg > .form-control{
+	border-radius: 0;
+	border: 2px solid #3B454E;
+}
+
+.input-group-lg > .input-group-append > .btn {
+	border-radius: 0;
+	color: #3B454E;
+    border: 2px solid #3B454E;
+    text-transform: uppercase;
+    font-size: 1rem;
+    background-color: transparent;
+    transition: all ease-in-out 0.2s;
+    font-weight: 500;
+}
+
+@media screen and (min-width: 768px) {
+
+}
+
+@media screen and (min-width: 1200px) {
+
+    a.theme-btn {
+        font-size: 1rem;
+        padding: 0.625rem 2.25rem;
+    }
+
+}
+
+@media (min-width: 1700px) {
+
+    a.theme-btn {
+        font-size: 1.125rem;
+        padding: 0.875rem 2.5rem;
+    }
 }
 
 
