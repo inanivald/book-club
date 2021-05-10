@@ -5,7 +5,7 @@ import BookCard from './BookCard.js';
 import '../assets/scss/app.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
-import PhotoPlaceholder from '../assets/images/photo-placeholder.png'
+import Placeholder from '../assets/images/placeholder.png'
 
 
 function Search() {
@@ -18,7 +18,7 @@ function Search() {
     	setLoading(true);
      
       	axios.get(
-          	`https://www.googleapis.com/books/v1/volumes?q=${result}&maxResults=40&`
+			  `https://www.googleapis.com/books/v1/volumes?q=${result}&maxResults=40`
         	)
 			.then(res => {
 				setCards(res.data.items);
@@ -68,7 +68,7 @@ function Search() {
         if (item.volumeInfo.imageLinks) {
           thumbnail = item.volumeInfo.imageLinks.thumbnail;
         } else {
-          thumbnail = PhotoPlaceholder;
+          thumbnail = Placeholder;
 		}
 		let authors = '';
         if (item.volumeInfo.authors) {

@@ -29,7 +29,7 @@ const BooksView = ({ books }) => {
 					read: true,
 				});
 			} catch (err) {
-				console.error("The title could not be updated. Please try again.")
+				setError(err.message);
 			}
 		  } else {
 			try {
@@ -54,22 +54,22 @@ const BooksView = ({ books }) => {
 		<Row>
 	
 			{books.map(book => (
-				<Col md={6} lg={3} key={book.id}>
+				<Col className="mb-3" md={6} lg={3} key={book.id}>
 					<Card className="mb-3 h-100">
 						
 						<Card.Img variant="top" src={book.thumbnail} title={book.title} className="img-fluid"/>
 						
-						<Card.Body>
-							<Card.Title><p>Title:&nbsp; 
+						<Card.Body className="books">
+							<Card.Title><p><span className="strong">Title:&nbsp;</span>
 							<a href={book.infoLink}
               					className="btn-link"
 								color="default"
 								type="button"
-								target="_blank'rel='noopener noreferrer">
+								target="_blank" rel="noopener noreferrer">
 								 {book.title}
 							</a>
 							</p>
-							<p>Author:&nbsp; 
+							<p><span className="strong">Author:&nbsp;</span>
 							 {book.authors}
 							</p></Card.Title>
 							<div>

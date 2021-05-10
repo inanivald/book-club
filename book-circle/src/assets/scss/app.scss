@@ -19,43 +19,28 @@ body {
 	color: #3B454E;
 	-webkit-font-smoothing: antialiased; /* Font rendering in Chrome on Mac */
 	-moz-osx-font-smoothing: grayscale; /* Font rendering in Firefox on Mac */
-  }
-  
-.main-image {
-	background-image: linear-gradient( rgba(255, 255, 255, 0.403), rgba(255, 255, 255, 0.396) ), url(../images/olga-tutunaru-plbb7pkEjkQ-unsplash.jpg);
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
-	max-width: 100%;
-	position: relative;
-	height: 60vh;
 }
-  
 
-  a, 
-  a:link, 
-  a:active { 
+a, 
+a:link, 
+a:active { 
 	color: #3B454E;
 	text-decoration: none !important; 
-  }
-  a:hover{
+
+}
+a:hover{
 	text-decoration: underline;
-  }
-  .card-title a {
-	color: #3B454E;
-  }
-  .card-title h3 {
-	font-size: 1rem;
-  }
-  
-  ol, ul {
-  padding-left: 1.25rem;
-  }
-  
-  /*–––––––––––––––––––––––––––––––––––––––––––––––––
-  TEXT AND TYPOGRAPHY
-  –––––––––––––––––––––––––––––––––––––––––––––––––*/
-  h1,h2,h3,h4,h5,h6 {
+}
+
+
+ol, ul {
+padding-left: 1.25rem;
+}
+
+/*–––––––––––––––––––––––––––––––––––––––––––––––––
+TEXT AND TYPOGRAPHY
+–––––––––––––––––––––––––––––––––––––––––––––––––*/
+h1,h2,h3,h4,h5,h6 {
 	font-weight: 700;
 	line-height: 1.2;
 	text-transform: none;
@@ -64,105 +49,120 @@ body {
 	-webkit-hyphens: auto;
 	-ms-hyphens: auto;
 	hyphens: auto;
-  }
-  h1 {
+}
+h1 {
 	font-size: 1.75rem;
 	font-weight: 700;
 	margin-bottom: .5rem;
 	text-transform: initial;
-  }
-  h2 {
+}
+h2 {
 	font-size: 1.25rem;
 	font-weight: 700;
 	margin-bottom: .25rem;
 	text-transform: uppercase;
-  }
-  h3 {
+}
+h3 {
 	font-size: 1rem;
 	font-weight: 700;
 	margin-bottom: .25rem;
-	text-transform: uppercase;  
-  }
-  h4 {
+text-transform: uppercase;	
+}
+h4 {
 	font-size: 1.125rem;
 	font-weight: 700;
 	margin-bottom: .25rem;
-  }
-  h5 {
+}
+h5 {
 	font-size: 1rem;
 	margin-bottom: .25rem;
-	text-transform: uppercase;  
-  }
-  h6 {
+text-transform: uppercase;	
+}
+h6 {
 	font-size: .875rem;
 	margin-bottom: .25rem;
-  }
-  h3 + h4 {
+}
+h3 + h4 {
 	margin-top:.75em;
-  }
-  p {
+}
+p {
 	font-weight: 400;
 	line-height: 1.5;
-  }
-  img + p, img + h2, img + h3, img + h4, video + p {
-	margin-top: 1.5rem;
-  }
-  p + h2, p + h3, p + h4 {
-	margin-top: 1.5em;
-  }
-  p.ingress {
-	font-size:  1.125rem;
+}
+p.ingress {
+font-size:	1.125rem;
 	line-height: 1.3;
 	font-family: proxima-nova,sans-serif;
 	font-weight: 500;
-  }
-  
-  /* Breakpoints Text and typography
-  ––––––––––––––––––––––––––––––––– */
-  
-  @media (min-width: 576px) {
-  h1,h2,h3,h4,h5,h6 {
+}
+img + p, img + h2, img + h3, img + h4, video + p {
+	margin-top: 1.5rem;
+}
+p + h2, p + h3, p + h4 {
+	margin-top: 1.5em;
+}
+p.ingress {
+font-size:	1.125rem;
+	line-height: 1.3;
+	font-family: proxima-nova,sans-serif;
+	font-weight: 500;
+}
+
+/* Breakpoints Text and typography
+––––––––––––––––––––––––––––––––– */
+
+@media (min-width: 576px) {
+h1,h2,h3,h4,h5,h6 {
 	-webkit-hyphens: manual;
 	-ms-hyphens: manual;
 	hyphens: manual; /*hyphen only at &hyphen; or &shy; (if needed)*/
-  }
-  }
-  @media (min-width: 992px) { 
-  h1 { 
+}
+}
+@media (min-width: 992px) { 
+h1 { 
 	font-size:2rem;
-  }
-  h2 {
+}
+h2 {
 	font-size:1.5rem;
-  }
-  h3 {
+}
+h3 {
 	font-size:1.25rem;
-  }
-  h4 {
+}
+h4 {
 	font-size:1.125rem;
-  }
-  p.ingress { 
+}
+p.ingress { 
 	font-size: 1.25rem;
-  }
-  }
-  
-  @media (min-width: 1200px) { 
-  h1 { 
-	font-size:2.5rem;
-  }
-  }
+}
+}
 
-  #header {
+@media (min-width: 1200px) { 
+h1 { 
+	font-size:2.5rem;
+}
+}
+
+.main-image {
 	background-image: linear-gradient( rgba(255, 255, 255, 0.403), rgba(255, 255, 255, 0.396) ), url(../images/olga-tutunaru-plbb7pkEjkQ-unsplash.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
 	max-width: 100%;
 	position: relative;
-	height: 60vh;
-  }
+	height: 50vh;
+}
 
-  
-  .card {
+.header {
+	background-image: linear-gradient( rgba(255, 255, 255, 0.403), rgba(255, 255, 255, 0.396) ), url(../images/olga-tutunaru-plbb7pkEjkQ-unsplash.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	max-width: 100%;
+	position: relative;
+	height: 50vh;
+}
+
+.card {
 	border-radius: 0;
 }
 .card-title {
@@ -170,36 +170,31 @@ body {
 }
 .card-title a{
 	font-size: 1rem; 
+	color: #3B454E;
 }
 .card-title a:hover{
-    opacity: 0.7;
+	opacity: 0.7;
+}
+.card-title h3 {
+	font-size: 1rem;
 }
 .strong {
 	font-weight: 500;
-
 }
-
 ::selection {
-
-    background-color: #273583;
-    color: #ffffff;
-
+	background-color: #273583;
+	color: #ffffff;
 }
-
 
 .card-image img{
-
 	width: 100%
-
 }
 
-.card-body {
+.card-body.books {
 	display: flex;
 	flex-direction: column;
 	justify-content: end;
 	align-items: flex-start;
-
-
 }
 
 col {
@@ -208,39 +203,11 @@ col {
 	flex-direction: column;
 }
 
-span.divider	{
-	height: 100%;
-	width: 1px;
-	background-color: #3B454E;
-	display: block;
-}
-
-@media screen and (min-width: 768px) {
-
-}
-
-@media screen and (min-width: 1200px) {
-
-    a.theme-btn {
-        font-size: 1rem;
-        padding: 0.625rem 2.25rem;
-    }
-
-}
-
-@media (min-width: 1700px) {
-
-    a.theme-btn {
-        font-size: 1.125rem;
-        padding: 0.875rem 2.5rem;
-    }
-}
 
 /*	______	Spacing	utilites	X	_______	*/
 .padding-x-row	{	
 	padding-left: 15px;	
 	padding-right: 15px;
-	transition: .5s;
 	}
 	
 	@media	(min-width: 768px)	{	
