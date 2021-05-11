@@ -8,7 +8,6 @@ const useAuth = () => {
 	return useContext(AuthContext)
 }
 
-
 const AuthContextProvider = (props) => {
 	const [currentUser, setCurrentUser] = useState(null)
 	const [loading, setLoading] = useState(true)
