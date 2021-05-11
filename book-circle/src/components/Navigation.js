@@ -16,7 +16,7 @@ const Navigation = () => {
 
 				<Container>
 					<Navbar.Brand href="/" className="navbar-brand">
-							Book circle
+							Home
 					</Navbar.Brand>
 
 					<Navbar.Toggle aria-controls="basic-navbar-nav" />

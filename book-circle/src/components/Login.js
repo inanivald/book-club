@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import { Row, Col, Form, Button, Card, Alert } from 'react-bootstrap'
+import { Row, Col, Form, Card, Alert } from 'react-bootstrap'
 import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../contexts/AuthContext'
 
@@ -57,7 +57,7 @@ const Login = () => {
 					</Card.Body>
 				</Card>
 				<div className="text-center mt-5">
-					<Link to="/signup" className="btn theme-btn book-card mr-3">Sign Up?</Link><Link to="/reset" className="btn theme-btn book-card">Forgot password?</Link>
+					<Link to="/signup" className="btn theme-btn book-card mr-3">Sign Up?</Link><Link to="/reset-password" className="btn theme-btn book-card">Forgot password?</Link>
 				</div>
 			</Col>
 		</Row>

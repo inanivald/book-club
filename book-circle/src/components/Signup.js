@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import { Row, Col, Form, Button, Card, Alert } from 'react-bootstrap'
+import { Row, Col, Form, Card, Alert } from 'react-bootstrap'
 import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../contexts/AuthContext'
 
@@ -57,7 +57,7 @@ const Signup = () => {
 									<Form.Control type="password" ref={passwordConfirmRef} required />
 								</Form.Group>
 
-								<Button disabled={loading} type="submit" className="btn theme-btn">Create Account</Button>
+								<button disabled={loading} type="submit" className="btn theme-btn">Create Account</button>
 
 							</Form>
 						</Card.Body>

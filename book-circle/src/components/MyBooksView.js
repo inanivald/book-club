@@ -25,7 +25,7 @@ const MyBooksView = ({ books }) => {
 	return (
 	
 	<>
-    <p className="ingress">You have added {books.length} books to the list.</p>
+    <p className="ingress">You have added {myBooks.length} books to the list.</p>
     <ul>
 			{myBooks.map(book => (
            <>

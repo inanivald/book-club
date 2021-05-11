@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import { Row, Col, Form, Button, Card, Alert } from 'react-bootstrap'
+import { Row, Col, Form, Card, Alert } from 'react-bootstrap'
 import { useAuth } from '../contexts/AuthContext'
 
 const UpdateProfile = () => {
@@ -17,7 +17,7 @@ const UpdateProfile = () => {
 
 		// make sure user has entered the same password in both input fields
 		if (passwordRef.current.value !== passwordConfirmRef.current.value) {
-			return setError("The passwords does not match")
+			return setError("The passwords do not match")
 		}
 
 		setError(null);
@@ -87,7 +87,7 @@ const UpdateProfile = () => {
 									<Form.Control type="password" ref={passwordConfirmRef} />
 								</Form.Group>
 
-								<Button disabled={loading} type="submit" className="btn theme-btn">Update</Button>
+								<button disabled={loading} type="submit" className="btn theme-btn">Update</button>
 
 							</Form>
 						</Card.Body>

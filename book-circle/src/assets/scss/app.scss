@@ -145,6 +145,10 @@ h1 {
 }
 }
 
+.bg-dark {
+	background: #3B454E !important;
+}
+
 .main-image {
 	background-image: linear-gradient( rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.7) ), url(../images/olga-tutunaru-plbb7pkEjkQ-unsplash.jpg);
 	background-repeat: no-repeat;
@@ -339,6 +343,14 @@ button.btn-green:hover {
     a.theme-btn {
         font-size: 1.125rem;
         padding: 0.875rem 2.5rem;
+    }
+}
+
+@media (max-width: 375px) {
+
+    a.theme-btn {
+        font-size: 0.875rem;
+        padding: 0.5rem 1rem;
     }
 }
 .border-bottom {

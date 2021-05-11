@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import { Row, Col, Form, Button, Card, Alert } from 'react-bootstrap'
+import { Row, Col, Form, Card, Alert } from 'react-bootstrap'
 import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../contexts/AuthContext'
 
@@ -33,7 +33,7 @@ const ResetPassword = () => {
 		<>
 		<Row>
 			<Col md={{ span: 6, offset: 3 }}>
-				<Card>
+				<Card className="mt-5">
 					<Card.Body>
 						<Card.Title>Forgot password?</Card.Title>
 
@@ -46,13 +46,13 @@ const ResetPassword = () => {
 								<Form.Control type="email" ref={emailRef} required />
 							</Form.Group>
 
-                         <Button disabled={loading} type="submit">Send</Button>
+                         <button disabled={loading} type="submit" className="btn theme-btn">Send</button>
 
 						</Form>
 					</Card.Body>
 				</Card>
 				<div className="text-center mt-2">
-					<Link to="/signup">Sign Up?</Link>
+					<Link to="/signup" className="btn theme-btn book-card">Sign Up?</Link>
 				</div>
 			</Col>
 		</Row>
