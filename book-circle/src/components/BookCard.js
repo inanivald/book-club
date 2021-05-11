@@ -81,13 +81,13 @@ const BookCard = ({
 					</button>
 				</div>
 				<div className='modal-body'>
-					<div className='d-flex justify-content-between'>
+					<div className='d-flex justify-content-center'>
 						<img className='mr-3' src={thumbnail} alt={title} style={{ height: '233px' }} />
-						<div>
-							<p>Page Count: {pageCount}</p>
-							<p>Language: {language}</p>
-							<p>Authors: {authors}</p>
-							<p>Publisher: {publisher}</p>
+						<div className='ml-3'>
+							<p><span className="strong">Page Count: </span>{pageCount}</p>
+							<p><span className="strong">Language: </span>{language}</p>
+							<p><span className="strong">Author: </span>{authors}</p>
+							<p><span className="strong">Publisher: </span>{publisher}</p>
 						</div>
 					</div>
 					<div className='mt-3'>{description}</div>
@@ -96,7 +96,7 @@ const BookCard = ({
 					<div className='left-silde'>
 						<a
 							href={previewLink}
-							className='btn-link'
+							className='btn theme-btn book-card'
 							color='default'
 							type='button'
 							target='_blank'
@@ -109,7 +109,7 @@ const BookCard = ({
 					<div className='right-silde'>
 						<a
 							href={infoLink}
-							className='btn-link'
+							className='btn theme-btn book-card'
 							color='default'
 							type='button'
 							target='_blank'

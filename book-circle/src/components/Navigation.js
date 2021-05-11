@@ -29,7 +29,7 @@ const Navigation = () => {
 											Booklist
 										</NavLink>
 						
-										<NavDropdown title={currentUser.displayName || currentUser.email} id="basic-nav-dropdown">
+										<NavDropdown title={currentUser.displayName || currentUser.email} alignRight>
 											<NavLink to="/search" className="dropdown-item">Search books</NavLink>
 											<NavDropdown.Divider />
 											<NavLink to="/update-profile" className="dropdown-item">Update Profile</NavLink>

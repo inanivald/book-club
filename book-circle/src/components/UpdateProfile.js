@@ -58,7 +58,7 @@ const UpdateProfile = () => {
 		<>
 			<Row>
 				<Col md={{ span: 6, offset: 3 }}>
-					<Card>
+					<Card className="mt-5">
 						<Card.Body>
 							<Card.Title>Update Profile</Card.Title>
 
@@ -87,7 +87,7 @@ const UpdateProfile = () => {
 									<Form.Control type="password" ref={passwordConfirmRef} />
 								</Form.Group>
 
-								<Button disabled={loading} type="submit">Update</Button>
+								<Button disabled={loading} type="submit" className="btn theme-btn">Update</Button>
 
 							</Form>
 						</Card.Body>

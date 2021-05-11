@@ -33,7 +33,7 @@ const Login = () => {
 		<>
 		<Row>
 			<Col md={{ span: 6, offset: 3 }}>
-				<Card>
+				<Card className="mt-5">
 					<Card.Body>
 						<Card.Title>Log in</Card.Title>
 
@@ -51,14 +51,13 @@ const Login = () => {
 								<Form.Control type="password" ref={passwordRef} required />
 							</Form.Group>
 
-							<Button disabled={loading} type="submit">Log in</Button>
+							<button disabled={loading} type="submit" className="btn theme-btn">Log in</button>
 
 						</Form>
 					</Card.Body>
 				</Card>
-				<div className="text-center mt-2">
-					<p><Link to="/signup">Sign Up?</Link></p>
-					<p><Link to="/reset">Forgot password?</Link></p>
+				<div className="text-center mt-5">
+					<Link to="/signup" className="btn theme-btn book-card mr-3">Sign Up?</Link><Link to="/reset" className="btn theme-btn book-card">Forgot password?</Link>
 				</div>
 			</Col>
 		</Row>

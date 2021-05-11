@@ -219,12 +219,7 @@ col {
 
 }
 
-.btn.btn-outline-success.mt-3.my-books a{
-	color: green;
-}
-.btn.btn-outline-success.mt-3.my-books:hover a{
-	color: #fff;
-}
+
 
 a.theme-btn, button.theme-btn {
     color: #3B454E;
@@ -237,11 +232,26 @@ a.theme-btn, button.theme-btn {
     transition: all ease-in-out 0.2s;
     font-weight: 500;
 }
+a.theme-btn.book-card{
+    color: #3B454E;
+    border: 2px solid #3B454E;
+    text-transform: uppercase;
+    border-radius: 2rem;
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    transition: all ease-in-out 0.2s;
+    font-weight: 500;
+}
+
 
 a.theme-btn:hover, button.theme-btn:hover{
     opacity: 0.6;
 }
 
+a.theme-btn:active, button.theme-btn:active{
+    background-color: transparent;
+}
 span.heart-border {
 	border: 2px solid red;
 	border-radius: 50%;
@@ -288,7 +298,8 @@ button.btn-green:hover {
 	
 }
 
-.input-group-lg > .form-control{
+
+.input-group-lg > .form-control, .form-control {
 	border-radius: 0;
 	border: 2px solid #3B454E;
 }
@@ -303,17 +314,23 @@ button.btn-green:hover {
     transition: all ease-in-out 0.2s;
     font-weight: 500;
 }
-
-@media screen and (min-width: 768px) {
-
+.dropdown-item.active, .dropdown-item:focus, .dropdown-item:active {
+	background: #3B454E;
 }
 
+.dropdown-menu {
+	border-radius: 0;
+}
 @media screen and (min-width: 1200px) {
 
     a.theme-btn {
         font-size: 1rem;
         padding: 0.625rem 2.25rem;
-    }
+	}
+	
+	.search-box {
+		width: 60%;
+	}
 
 }
 
@@ -326,7 +343,7 @@ button.btn-green:hover {
 }
 .border-bottom {
 	border-bottom: 2px solid #dee2e6 !important;
-	width: 50%;
+
 }
 
 /*	______	Spacing	utilites	X	_______	*/
@@ -345,6 +362,7 @@ button.btn-green:hover {
 	.padding-x-row	{
 	padding-left: 8vw;	
 	padding-right: 8vw;
+
 	}	
 	}
 	/*	_______	Spacing	utilites	y	________	*/

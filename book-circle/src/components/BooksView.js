@@ -1,14 +1,11 @@
 import React, { useState } from 'react'
 import { Row, Col, Card, Alert } from 'react-bootstrap'
-import { useAuth } from '../contexts/AuthContext'
 import { db } from '../firebase';
 
 
 const BooksView = ({ books }) => {
 
 	const [error, setError] = useState(false);
-	const { currentUser } = useAuth()
-
 
 	const handleUpdateBook = async (book) => {
     

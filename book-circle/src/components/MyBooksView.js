@@ -36,7 +36,7 @@ const MyBooksView = ({ books }) => {
                 {
 									currentUser.uid === book.owner && (
 										<>
-										<button className="mb-3 btn theme-btn btn-sm btn-red" onClick={() => {
+										<button className="mb-3 btn theme-btn btn-red" onClick={() => {
 											handleDeleteBook(book)
 										}}>
 											Delete

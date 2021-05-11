@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { InputGroup, FormControl, Spinner, Col, Row, Alert} from 'react-bootstrap';
+import { InputGroup, FormControl, Spinner, Col, Row, Alert } from 'react-bootstrap';
 import axios from 'axios';
 import BookCard from './BookCard.js';
 import '../assets/scss/app.scss'
@@ -9,7 +9,6 @@ import Placeholder from '../assets/images/placeholder.png'
 
 
 function Search() {
-
   	const [result, setResult] = useState('');
  	const [loading, setLoading] = useState(false);
   	const [cards, setCards] = useState([]);
@@ -37,7 +36,7 @@ function Search() {
         <h1>
           Book Search
         </h1>
-        <div style={{ width: '60%', zIndex: 2 }}>
+        <div className="search-box">
           <InputGroup size='lg' className='mb-3'>
             <FormControl
               placeholder='Book Search'
