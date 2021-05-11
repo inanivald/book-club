@@ -8,8 +8,8 @@ const MyBooks = () => {
     const { books, loading } = useBooks()
 
 	return (
-		<div className="">
-					<h2 className="mb-3">My Books</h2>
+		<div>
+					<h2 className="mb-3">Your Books</h2>
 					{
 						loading
 							? (<ClipLoader color={"#888"} size={20} />)

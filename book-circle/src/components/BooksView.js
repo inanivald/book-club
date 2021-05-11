@@ -1,24 +1,14 @@
 import React, { useState } from 'react'
 import { Row, Col, Card, Alert } from 'react-bootstrap'
 import { useAuth } from '../contexts/AuthContext'
-import useDeleteBook from '../hooks/useDeleteBook'
 import { db } from '../firebase';
 
 
 const BooksView = ({ books }) => {
-	const [deleteBook, setDeleteBook] = useState(null);
+
 	const [error, setError] = useState(false);
 	const { currentUser } = useAuth()
-	useDeleteBook(deleteBook);
 
-	const handleDeleteBook = (book) => {
-
-		// eslint-disable-next-line no-restricted-globals
-		if (confirm(`Are you sure you want to delete the book\n"${book.title}"?`)) {
-			setDeleteBook(book);
-
-		}
-	}
 
 	const handleUpdateBook = async (book) => {
     
@@ -73,17 +63,6 @@ const BooksView = ({ books }) => {
 							 {book.authors}
 							</p></Card.Title>
 							<div>
-								{
-									currentUser.uid === book.owner && (
-										<>
-										<button className="mb-1 btn theme-btn btn-sm btn-red" onClick={() => {
-											handleDeleteBook(book)
-										}}>
-											Delete
-										</button>
-										</>
-									)
-								}
 							
 							{
 								book.read

@@ -206,13 +206,6 @@ col {
 	flex-direction: column;
 }
 
-span.divider	{
-	height: 1px;
-	width: 50%;
-	background-color: #3B454E;
-	display: block;
-}
-
 .heart {
 	color: red;
 }
@@ -331,7 +324,10 @@ button.btn-green:hover {
         padding: 0.875rem 2.5rem;
     }
 }
-
+.border-bottom {
+	border-bottom: 2px solid #dee2e6 !important;
+	width: 50%;
+}
 
 /*	______	Spacing	utilites	X	_______	*/
 .padding-x-row	{	

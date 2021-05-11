@@ -19,7 +19,7 @@ const UnreadBooks = () => {
 							: (<UnreadBooksView books={books} />)
 					}
 					<div className="mt-3">
-						<Link to="/books">See all books </Link>
+						<Link to="/books" className="btn theme-btn mr-3 mb-5">See all books </Link>
 					</div>
 			</div>
 		</div>
