@@ -22,7 +22,6 @@ const App = () => {
 			<AuthContextProvider>
 				<Navigation />
 
-			
 					<Routes>
 
 						<AuthRoute path="/">
