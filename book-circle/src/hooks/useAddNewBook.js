@@ -15,7 +15,12 @@ const useAddNewBook = (book) => {
 			setIsSuccess(false);
 			return;
 		}
-		
+		let user = '';
+			if (currentUser.displayName) {
+				user = currentUser.displayName;
+			} else {
+				user = currentUser.email
+			}
 
 			const newBook = {
 				title: book.title,
@@ -24,7 +29,7 @@ const useAddNewBook = (book) => {
 				authors: book.authors,
 				infoLink: book.infoLink,
 				read: false,	
-				addedBy: currentUser.displayName,
+				addedBy: user,
 			};
 
 		db.collection('books').add(newBook)
