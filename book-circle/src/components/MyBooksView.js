@@ -16,7 +16,6 @@ const MyBooksView = ({ books }) => {
 		// eslint-disable-next-line no-restricted-globals
 		if (confirm(`Are you sure you want to delete the book\n"${book.title}"?`)) {
 			setDeleteBook(book);
-
 		}
 	}
 
@@ -26,7 +25,7 @@ const MyBooksView = ({ books }) => {
 	
 	<>
     <p className="ingress">You have added {myBooks.length} books to the list.</p>
-    <ul>
+    	<ul>
 			{myBooks.map(book => (
            <>
                 <li class="border-bottom mt-3"><FontAwesomeIcon className="heart" icon={faHeart} size="m"/>
@@ -48,9 +47,7 @@ const MyBooksView = ({ books }) => {
               </li>
 				</>
 			))}
-             </ul>
-			
-		
+        </ul>
 	</>
 	
 	)

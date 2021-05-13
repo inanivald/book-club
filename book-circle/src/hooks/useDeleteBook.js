@@ -10,8 +10,7 @@ const useDeleteBook = (book) => {
 		(async () => {
 			
 			db.collection('books').doc(book.id).delete()
-			
-			
+				
 		})();
 	}, [book]);
 

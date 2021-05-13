@@ -4,11 +4,8 @@ import Header from './Header'
 import { Link } from 'react-router-dom'
 import MyBooks from './MyBooks'
 
-
-
 const Home = () => {
 	const { currentUser } = useAuth()
-
 
 	return (
 		<div className="">
@@ -19,10 +16,9 @@ const Home = () => {
 					</div>
 					<div className="mr-3 mb-5 border-bottom">
 						<Link to="/books" className="btn theme-btn mr-3 mb-5">See all books </Link>
-					
 						<Link to="/update-profile" className="btn theme-btn mr-3 mb-5">Update Profile</Link>
 					</div>
-					<MyBooks  />
+					<MyBooks />
 			</div>
 		</div>
 		

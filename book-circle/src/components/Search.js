@@ -1,23 +1,24 @@
-import React, { useState } from 'react';
-import { InputGroup, FormControl, Spinner, Col, Row, Alert } from 'react-bootstrap';
-import axios from 'axios';
-import BookCard from './BookCard.js';
-import '../assets/scss/app.scss'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
-import Placeholder from '../assets/images/placeholder.png'
-
+import React, { useState } from "react";
+import { InputGroup, FormControl, Spinner, Col, Row, Alert } from "react-bootstrap";
+import axios from "axios";
+import BookCard from "./BookCard.js";
+import "../assets/scss/app.scss"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faSearch } from "@fortawesome/free-solid-svg-icons"
+import Placeholder from "../assets/images/placeholder.png"
 
 function Search() {
-  	const [result, setResult] = useState('');
+  	const [result, setResult] = useState("");
  	const [loading, setLoading] = useState(false);
-  	const [cards, setCards] = useState([]);
+	const [cards, setCards] = useState([]);
+	
+	const apiKey = process.env.REACT_APP_FIREBASE_API_KEY
 
 	const handleSubmit = () => {
     	setLoading(true);
      
       	axios.get(
-			  `https://www.googleapis.com/books/v1/volumes?q=${result}&maxResults=40`
+			  `https://www.googleapis.com/books/v1/volumes?q=${result}&maxResults=40&key${apiKey}`
         	)
 			.then(res => {
 				setCards(res.data.items);
@@ -27,19 +28,18 @@ function Search() {
 				setLoading(true);
 				console.log(err.response);
 			});
-    
-  };
+  	};
 
   const mainHeader = () => {
     return (
-      <div className='main-image d-flex justify-content-center align-items-center flex-column mb-3'>
+      <div className="main-image d-flex justify-content-center align-items-center flex-column mb-3">
         <h1>
           Book Search
         </h1>
         <div className="search-box">
-          <InputGroup size='lg' className='mb-3'>
+          <InputGroup size="lg" className="mb-3">
             <FormControl
-              placeholder='Book Search'
+              placeholder="Book Search"
               value={result}
               onChange={e => setResult(e.target.value)}
             />
@@ -57,23 +57,23 @@ function Search() {
   const handleCards = () => {
     if (loading) {
       return (
-        <div className='d-flex justify-content-center mt-3'>
-          <Spinner style={{ width: '3rem', height: '3rem' }} />
+        <div className="d-flex justify-content-center mt-3">
+          <Spinner style={{ width: "3rem", height: "3rem" }} />
         </div>
       );
 	} else if (cards) {
 		const items = cards.map((item) => {
-			let thumbnail = '';
+			let thumbnail = "";
 			if (item.volumeInfo.imageLinks) {
 				thumbnail = item.volumeInfo.imageLinks.thumbnail;
 			} else {
 				thumbnail = Placeholder;
 			}
-			let authors = '';
+			let authors = "";
 			if (item.volumeInfo.authors) {
 				authors = item.volumeInfo.authors;
 			} else {
-				authors = 'No info added';
+				authors = "No info added";
 			}
 			
 			return (
@@ -99,7 +99,7 @@ function Search() {
 	);
 	} else {
 		return (
-			<div className='text-center'>
+			<div className="text-center">
 				<Alert variant="danger">Your search returned 0 results.</Alert>
 			</div>
 		);

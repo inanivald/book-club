@@ -1,11 +1,9 @@
 import React from 'react'
 import { Row, Col, Card } from 'react-bootstrap'
 
-
 const UnreadBooksView = ({ books }) => {
 
 const unreadBooks = books.filter(book => book.read === false)
-
 
 	return (
 	

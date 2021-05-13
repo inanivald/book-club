@@ -1,9 +1,9 @@
-import React from 'react'
-import { ClipLoader } from 'react-spinners'
-import useBooks from '../hooks/useBooks'
-import ReadBooksView from './ReadBooksView'
-import Header from './Header'
-import { Link } from 'react-router-dom'
+import React from "react"
+import { ClipLoader } from "react-spinners"
+import useBooks from "../hooks/useBooks"
+import ReadBooksView from "./ReadBooksView"
+import Header from "./Header"
+import { Link } from "react-router-dom"
 
 const ReadBooks = () => {
     const { books, loading } = useBooks()

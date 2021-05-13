@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
-import { db } from '../firebase';
-import { useAuth } from '../contexts/AuthContext'
+import { useState, useEffect } from "react";
+import { db } from "../firebase";
+import { useAuth } from "../contexts/AuthContext"
 
 const useAddNewBook = (book) => {
 	const [uploadedBook, setUploadedBook] = useState(null);
@@ -15,7 +15,7 @@ const useAddNewBook = (book) => {
 			setIsSuccess(false);
 			return;
 		}
-		let user = '';
+		let user = "";
 			if (currentUser.displayName) {
 				user = currentUser.displayName;
 			} else {
@@ -32,7 +32,7 @@ const useAddNewBook = (book) => {
 				addedBy: user,
 			};
 
-		db.collection('books').add(newBook)
+		db.collection("books").add(newBook)
 
 			setUploadedBook(newBook);
 			setIsSuccess(true);

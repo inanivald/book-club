@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
-import { Row, Col, Card, Alert } from 'react-bootstrap'
-import { db } from '../firebase';
+import React, { useState } from "react"
+import { Row, Col, Card, Alert } from "react-bootstrap"
+import { db } from "../firebase";
 
 
 const BooksView = ({ books }) => {
@@ -12,7 +12,7 @@ const BooksView = ({ books }) => {
 		if (book.read === false) {
 
 			try {
-				await db.collection('books').doc(book.id).update({
+				await db.collection("books").doc(book.id).update({
 					read: true,
 				});
 			} catch (err) {
@@ -20,11 +20,10 @@ const BooksView = ({ books }) => {
 			}
 		  } else {
 			try {
-				await db.collection('books').doc(book.id).update({
+				await db.collection("books").doc(book.id).update({
 					read: false,
 				});
 
-	
 			} catch (err) {
 				setError(err.message);			
 			}
@@ -32,9 +31,6 @@ const BooksView = ({ books }) => {
 		
 	}
 
-
-	
-	
 	return (
 	
 	<>

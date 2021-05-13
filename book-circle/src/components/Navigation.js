@@ -9,7 +9,6 @@ const Navigation = () => {
 		logout()
 	}
 
-
 	return (
 		<div>
 			<Navbar bg="dark" variant="dark">

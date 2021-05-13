@@ -9,8 +9,6 @@ const Books = () => {
 
 	const { books, loading } = useBooks()
 
-	
-
 	return (
 		<div className="">
 			<Header className="p-5"/>

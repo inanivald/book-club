@@ -145,12 +145,9 @@ h1 {
 }
 }
 
-button {
+button, [type="button"]  {
 	-webkit-appearance: none;
   }
-[type="button"] {
-	-webkit-appearance: none;
-}
 
 .bg-dark {
 	background: #3B454E !important;
